@@ -8,8 +8,13 @@ ADD .  /usr/src/app/
 
 
 RUN pip install pip --upgrade
-#RUN python setup.py sdist
-RUN pip install /usr/src/app/dist/ga4gh-0.3.0.tar.gz
+
+RUN mkdir $HOME/.python-eggs \
+  && chmod og-w $HOME/.python-eggs \
+  && pip install -r dev-requirements.txt
+
+# RUN python setup.py sdist
+# RUN pip install /usr/src/app/dist/ga4gh-0.3.0.tar.gz
 
 
 # RUN ga4gh_client --version \
@@ -23,9 +28,9 @@ RUN pip install /usr/src/app/dist/ga4gh-0.3.0.tar.gz
 
 
 
-RUN mkdir $HOME/.python-eggs \
-  && chmod og-w $HOME/.python-eggs \
-  && pip install -r dev-requirements.txt
+# RUN mkdir $HOME/.python-eggs \
+#  && chmod og-w $HOME/.python-eggs \
+#  && pip install -r dev-requirements.txt
 
 RUN curl -sL --retry 3 --insecure \
   --header "Cookie: oraclelicense=accept-securebackup-cookie;" \

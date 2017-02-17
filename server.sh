@@ -8,4 +8,4 @@ then
 fi
 
 echo "Looks like ga4gh not  started. Starting docker image."
-docker run --name ga4gh  -v $(pwd):/server -p 8000:8000  -it  server-python-java  bash
+docker run --name ga4gh  -v $(pwd):/server -p 8000:8000  -p 8888:8888 -it  server-python-java  bash

@@ -43,4 +43,4 @@ RUN cd /server \
 
 
 WORKDIR /server
-CMD ga4gh_server -H 0.0.0.0 & jupyter notebook --notebook-dir=/server/bioapi-examples --ip=0.0.0.0
+CMD ga4gh_server -H 0.0.0.0 & jupyter notebook --notebook-dir=/server/bioapi-examples --ip=0.0.0.0 --NotebookApp.token=  --no-browser
